@@ -61,8 +61,8 @@ OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'lamasandeep821@okicici')
 # ============================
 # MongoDB Configuration
 # ============================
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Prohbh626:Prohbh626@cluster0.m7jmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://Ayush:AYUSHRA5354N@cluster0.lskh5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://new1:sandy008@cluster0.gtepjmb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://new1:sandy008@cluster0.gtepjmb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'SANDY_FILES')
 
@@ -85,8 +85,8 @@ HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/+URI0ggQ1mLAyM2Y1')  
 # Link Shortener Configuration
 # ============================
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortner.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '5b22551890e0d5f2fded51fd64218868131bef1a')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortifyurl.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', '7e5614ab72f04b5f6df4e1e93c8fca3bd1910574')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/+URI0ggQ1mLAyM2Y1')  # Tutorial video link for opening shortlink website
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 
@@ -96,7 +96,7 @@ IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+KMWdbBYF9SdjZDBl')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+KMWdbBYF9SdjZDBl')
 OWNER_LNK = environ.get('OWNER_LNK', '@Sandymaiwait')
-DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK = environ.get('DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/dreamcinezone')
+DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK = environ.get('DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/+KMWdbBYF9SdjZDBl')
 OWNERID = int(os.environ.get('OWNERID', '6046055058'))  # Replace with the actual admin ID
 
 # ============================
