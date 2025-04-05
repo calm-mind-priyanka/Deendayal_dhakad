@@ -327,7 +327,7 @@ async def advantage_spoll_choker(bot, query):
     movies = await get_poster(id, id=True)
     movie = movies.get('title')
     movie = re.sub(r"[:-]", " ", movie)
-    movie = re.sub(r"s+", " ", movie).strip()
+    movie = re.sub(r"\s+", " ", movie).strip()
     
     await query.answer(script.TOP_ALRT_MSG)
     gl = await global_filters(bot, query.message, text=movie)
@@ -1681,18 +1681,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                     InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🕵️‍♂️ Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
-                    InlineKeyboardButton(' sᴜᴘᴘᴏʀᴛ 🔄', callback_data='channels')
+                    InlineKeyboardButton('ᴛᴏᴘ sᴇᴀʀᴄʜɪɴɢ ⭐', callback_data="topsearch"),
+                    InlineKeyboardButton(' ʜᴇʟᴘ 📢', callback_data='help'),
                 ],[
-                    InlineKeyboardButton(' ʜᴇʟᴘ 🚨', callback_data='help'),
-                    InlineKeyboardButton(' ᴀʙᴏᴜᴛ ❓', callback_data='about')
-                ],[
-                    InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 💰', callback_data='donation'),
-                    InlineKeyboardButton('Eᴀʀɴ ᴍᴏɴᴇʏ..💲', callback_data="shortlink_info")
-                ],[
-                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
-                  ]]
-        
+                    InlineKeyboardButton(' ᴀʙᴏᴜᴛ 📖', callback_data='about'),
+                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ..💵', callback_data="shortlink_info")
+                ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
         curr_time = current_time.hour        
@@ -2018,13 +2012,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "channels":
         buttons = [[
-            InlineKeyboardButton('🎞 Mᴏᴠɪᴇ Gʀᴏᴜᴘ ', url=GRP_LNK),
+            InlineKeyboardButton('🎞 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ', url=GRP_LNK),
             InlineKeyboardButton('☸️ ʙᴀᴄᴋᴜᴘ', url=CHNL_LNK)
         ],[
-            InlineKeyboardButton('🗣📢 Mᴏᴠɪᴇ Nᴏᴛɪғɪᴄᴀᴛɪᴏɴ ', url=DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK),
+            InlineKeyboardButton('🗣📢 ᴍᴏᴠɪᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ', url=DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK),
         ],[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start'),
-            InlineKeyboardButton('➤ Cᴏɴᴛᴀᴄᴛ ', url=OWNER_LNK)
+            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help'),
+            InlineKeyboardButton('➤ ᴄᴏɴᴛᴀᴄᴛ ', url=OWNER_LNK)
         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2117,11 +2111,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👨🏻‍💼 ᴜꜱᴇʀ', callback_data='users'),
             InlineKeyboardButton('🤝 ɢʀᴏᴜᴘ', callback_data='group')
         ],[
-            InlineKeyboardButton ('🎫 sᴛɪᴄᴋᴇʀ ɪᴅ', callback_data='sticker'),
-            InlineKeyboardButton('🌿 ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele')
-        ],[
-            InlineKeyboardButton('🚩 ғᴏɴᴛ', callback_data='font'),
-            InlineKeyboardButton('📋 Jsᴏɴ', callback_data='json')
+            InlineKeyboardButton(' sᴜᴘᴘᴏʀᴛ 🔄', callback_data='channels')
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2135,6 +2125,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
             InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
+        ],[
+            InlineKeyboardButton('ᴅᴏɴᴀᴛɪᴏɴ 💰', callback_data='donation'), 
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2155,81 +2147,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.SOURCE_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-
-
-    elif query.data == "json":
-        buttons = [[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="● ◌ ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ●"
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=(script.JSON_TXT),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        
-    elif query.data == "sticker":
-            btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")                    
-                  ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(script.STICKER_TXT),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "tele":
-            btn = [[
-                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url=OWNER_LNK)
-                  ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(script.TELE_TXT),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-        )
-
-    elif query.data == "font":
-            btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")
-                  ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(script.FONT_TXT),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
         )
 
     elif query.data == "ref_point":
